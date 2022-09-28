@@ -4,6 +4,7 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import Sequelize from 'sequelize';
 import db from './config/database.js';
+import router from './routes/gigs.js';
 
 db.authenticate()
   .then(() => console.log('databse connected'))
@@ -12,6 +13,9 @@ db.authenticate()
 const app = express();
 
 app.get('/', (req, res) => res.send('index'));
+
+// gig routes
+app.use('/gigs', router);
 
 const PORT = process.env.PORT || 5000;
 
