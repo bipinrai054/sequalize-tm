@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 
 const db = new Sequelize('codegig', 'root', '', {
   host: 'localhost',
@@ -11,4 +11,4 @@ const db = new Sequelize('codegig', 'root', '', {
   },
 });
 
-export default db;
+module.exports = db;
