@@ -2,6 +2,12 @@ import express from 'express';
 import exphbs from 'express-handlebars';
 import path from 'path';
 import bodyParser from 'body-parser';
+import Sequelize from 'sequelize';
+import db from './config/database.js';
+
+db.authenticate()
+  .then(() => console.log('databse connected'))
+  .catch((err) => console.log(err));
 
 const app = express();
 
